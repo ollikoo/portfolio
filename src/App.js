@@ -5,6 +5,7 @@ import './Hamburgers.css';
 import './App.css';
 import Nav from './components/Nav.js';
 import Hero from './components/Hero.js';
+import Samples from './components/Samples.js';
 
 const App = () => {
   return (
@@ -14,6 +15,11 @@ const App = () => {
       </div>
       <div className="main-content">
         <Hero />
+        <Samples
+          id="samples"
+          title="Samples"
+          number="01"
+        />
       </div>
     </div>
   );

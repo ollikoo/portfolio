@@ -26,7 +26,7 @@ const Nav = () => {
                 </div>
             </header>
             <nav className={navOpen ? 'is-active' : 'is-not-active'}>
-                <div className="nav-item">
+                <div className="nav-item is-active">
                     <a href="#top"><box-icon name='home-alt' ></box-icon></a>
                 </div>
                 <div className="nav-item">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Hamburger from 'react-hamburgers';
 
-const Burger = (props) => {
+const Burger = props => {
 
   const [active, setActive] = useState(false);
 
