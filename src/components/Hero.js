@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
+import background from '../images/hero.jpg';
 
 const Hero = () => {
 
-    const aosInit = () => {
+    const initHero = () => {
         AOS.init()
     }
-    useEffect(aosInit, [])
 
     return (
         <div id="top" className="hero overlay overlay--black">
+            <img onLoad={initHero} aria-hidden="true" className="hero__bg" src={background} alt="Hero background"/>
             <div className="container">
                 <div className="row">
                     <div className="col">

@@ -184,6 +184,12 @@ nav.is-active {
   justify-content: center;
   position: relative;
   z-index: 2;
+  overflow: hidden;
+}
+
+.hero__bg {
+  opacity: 0;
+  position: absolute;
 }
 
 .hero h1 {
