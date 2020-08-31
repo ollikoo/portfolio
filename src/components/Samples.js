@@ -9,16 +9,16 @@ const Samples = props => {
 
     const client = contentful.createClient({
         space: 'g1ucuyj5405u',
+        environment: 'master',
         accessToken: process.env.REACT_APP_ACCESS_TOKEN
     })
 
     const getProjects = () => {
-        client.getEntries()
-        .then((response) => 
-        {
-        console.log(response.items)
-        setProjects(response.items)
+        client.getEntries({
+            order: '-fields.year',
+            content_type: 'project'
         })
+        .then((response) => setProjects(response.items))
         .catch(console.error)
     }
     useEffect(getProjects, [])

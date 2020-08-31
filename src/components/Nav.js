@@ -82,7 +82,7 @@ const Nav = () => {
                 <div className="nav-item">
                     <Link
                         activeClass="is-active"
-                        to="timeline"
+                        to="history"
                         spy={true}
                         smooth={true}
                         offset={0}

@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
 
 const Hero = () => {
+
+    const aosInit = () => {
+        AOS.init()
+    }
+    useEffect(aosInit, [])
+
     return (
         <div id="top" className="hero overlay overlay--black">
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <h1>Hello world</h1>
+                        <h1 data-aos="fade-up" data-aos-duration="2000">Hello, I am Olli and I am<br/> 25-year-old Web Developer and Designer</h1>
                     </div>
                 </div>
             </div>

@@ -11,8 +11,8 @@ const Slider = props => {
     return (
         <Carousel activeIndex={index} onSelect={handleSelect} pause="hover">
             {
-            props.slides.map((item) =>
-                <Carousel.Item key={item.sys.id}>
+            props.slides.map((item, i) =>
+                <Carousel.Item key={i}>
                     <div className="carousel-item__content" style={{backgroundImage: `url(${item.fields.image ? item.fields.image.fields.file.url : ''})`}}>
                         <a href={item.fields.link} target="_blank" rel="noopener noreferrer">
                             <h3 className="carousel-item__name">{item.fields.name}</h3>
