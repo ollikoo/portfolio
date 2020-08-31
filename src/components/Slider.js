@@ -9,7 +9,7 @@ const Slider = props => {
     };
   
     return (
-        <Carousel activeIndex={index} onSelect={handleSelect}>
+        <Carousel activeIndex={index} onSelect={handleSelect} pause="hover">
             {
             props.slides.map((item) =>
                 <Carousel.Item key={item.sys.id}>

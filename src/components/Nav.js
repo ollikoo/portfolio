@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Burger from './Burger';
-import { Link } from "react-scroll";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Nav = () => {
     
@@ -10,13 +10,17 @@ const Nav = () => {
         setNavOpen(!navOpen)
     }
 
+    const scrollTop = () => {
+        scroll.scrollToTop()
+    }
+    
     return (  
         <div className="nav-wrap">
             <header className="nav-bar">
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-6 nav-bar__left">
-                            <div className="nav-bar__logo"></div>
+                            <div onClick={scrollTop} className="nav-bar__logo"></div>
                         </div>
                         <div className="col-6 nav-bar__right">
                             <div className="nav-bar__menu-trigger">
@@ -61,6 +65,30 @@ const Nav = () => {
                         duration={500}
                     >
                         <box-icon name='info-circle' ></box-icon>
+                    </Link>
+                </div>
+                <div className="nav-item">
+                    <Link
+                        activeClass="is-active"
+                        to="skills"
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={500}
+                    >
+                        <box-icon name='bar-chart' ></box-icon>
+                    </Link>
+                </div>
+                <div className="nav-item">
+                    <Link
+                        activeClass="is-active"
+                        to="timeline"
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={500}
+                    >
+                        <box-icon name='history' ></box-icon>
                     </Link>
                 </div>
             </nav>
