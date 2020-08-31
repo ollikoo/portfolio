@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,900;1,300;1,400;1,900&display=swap');
+
 :root {
   --dark-grey: #1D1D1D;
   --light-grey: #282828;
@@ -6,19 +8,26 @@
   --white: #ffffff;
   --section-padding-top: 100px;
   --section-padding-bottom: 100px;
-}
-
-html {
-  scroll-behavior: smooth;
+  --global-shadow: 0px 0px 40px rgba(0, 0, 0, 0.3);
 }
 
 body {
   background-color: var(--dark-grey);
+  font-family: 'Roboto', sans-serif;
 }
 
 h1, h2, h3, h4, h5 {
   color: var(--white);
+  font-weight: 900;
 }
+
+h2 {
+  font-size: 60px;
+}
+
+.section h2 {
+  margin-bottom: 50px;
+} 
 
 button:focus {
   outline: none;
@@ -31,7 +40,8 @@ button:focus {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  z-index: 1;
+  z-index: 111;
+  pointer-events: none;
 }
 
 .nav-bar {
@@ -45,6 +55,7 @@ button:focus {
   display: flex;
   flex-direction: row;
   align-items: center;
+  pointer-events: all;
 }
 
 .nav-bar__left {
@@ -78,7 +89,7 @@ nav {
   transition: right 0.35s ease;
   pointer-events: none;
   background-color: var(--dark-grey);
-  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--global-shadow);
   z-index: 11;
 }
 
@@ -115,24 +126,27 @@ nav.is-active {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.35s ease;
+}
+
+.nav-item a.is-active {
+  background-color: var(--red);
+}
+
+.nav-item a.is-active box-icon {
+  fill: var(--white);
 }
 
 .nav-item box-icon {
   fill: var(--grey);
   width: 36px;
   height: 36px;
-}
-
-.nav-item.is-active {
-  background-color: var(--red);
-}
-
-.nav-item.is-active box-icon {
-  fill: var(--white);
+  transition: all 0.35s ease;
 }
 
 .nav-item:hover {
   background-color: var(--light-grey);
+  cursor: pointer;
 }
 
 .hero {
@@ -172,46 +186,141 @@ nav.is-active {
 .section {
   padding-top: var(--section-padding-top);
   padding-bottom: var(--section-padding-bottom);
-  min-height: 100vh;
 }
 
 .section h2 {
   text-align: center;
+  text-shadow: var(--global-shadow);
+}
+
+.section-title {
+  position: relative;
+}
+
+.section-number {
+  opacity: 0.1;
+  position: absolute;
+  text-shadow: none;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  margin: 0;
+  font-size: 120px;
+
 }
 
 .section--samples {
   background-color: var(--dark-grey);
 }
 
+.section--about {
+  background-color: var(--red);
+}
+
 .carousel {
   width: 100%;
-  border: 1px solid red;
+}
+
+.carousel-indicators {
+  bottom: -70px;
+}
+
+.carousel-inner {
+  padding: 30px 0;
+}
+
+.carousel-control-prev span {
+  background-image: none;
+  border-top: 2px solid var(--white);
+  border-left: 2px solid var(--white);
+  transform: rotate(-45deg);
+}
+
+.carousel-control-next span {
+  background-image: none;
+  border-top: 2px solid var(--white);
+  border-right: 2px solid var(--white);
+  transform: rotate(45deg);
 }
 
 .carousel-item {
   width: 100%;
-  border: 1px dashed blue;
 }
 
-.carousel-item.active {
-  
+.carousel-item__content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--light-grey);
+  box-shadow: var(--global-shadow);
 }
 
-.carousel-item::after {
+.carousel-item__content::after {
   content: '';
   display: block;
   padding-bottom: 100%;
 }
 
-.carousel-item__content {
+.carousel-item__name {
   position: absolute;
-  width: 50%;
+  right: 30px;
+  top: 30px;
+  font-weight: 300;
+  margin: 0;
+  font-size: 25px;
+}
+
+.carousel-item__year {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  font-weight: 900;
+  margin: 0;
+  font-size: 25px;
+}
+
+.carousel-item__role {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  font-weight: 300;
+  margin: 0;
+  font-size: 25px;
+}
+
+.carousel-item__content box-icon {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  fill: var(--white);
+  width: 25px;
+  height: 25px;
+}
+
+.carousel-item__content a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: 100%;
 }
 
-@media (min-width: 576px) { }
+@media (max-width: 576px) {
+  .carousel-item__name, .carousel-item__year, .carousel-item__role {
+    font-size: 20px;
+  }
+}
 
-@media (min-width: 768px) { }
+@media (min-width: 768px) {
+  .carousel-item__content {
+    width: 50%;
+  }
+}
 
 @media (min-width: 992px) { }
 

@@ -24,9 +24,12 @@ const Samples = props => {
     useEffect(getProjects, [])
 
     return (
-        <section id={props.id} className="section section--work">
+        <section id={props.id} className="section section--samples">
             <div className="container">
-                <h2>{props.title}</h2>
+                <div className="section-title">
+                    <h2 className="section-number" aria-hidden="true">{props.number}</h2>
+                    <h2>{props.title}</h2>
+                </div>
                 <div className="row">
                     <div className="col">
                         <Slider slides={projects} />

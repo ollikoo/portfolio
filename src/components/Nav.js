@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Burger from './Burger';
+import { Link } from "react-scroll";
 
 const Nav = () => {
     
@@ -26,11 +27,41 @@ const Nav = () => {
                 </div>
             </header>
             <nav className={navOpen ? 'is-active' : 'is-not-active'}>
-                <div className="nav-item is-active">
-                    <a href="#top"><box-icon name='home-alt' ></box-icon></a>
+                <div className="nav-item">
+                    <Link
+                        activeClass="is-active"
+                        to="top"
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={500}
+                    >
+                        <box-icon name='home-alt' ></box-icon>
+                    </Link>
                 </div>
                 <div className="nav-item">
-                    <a href="#work"><box-icon name='briefcase'></box-icon></a>
+                    <Link
+                        activeClass="is-active"
+                        to="samples"
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={500}
+                    >
+                        <box-icon name='briefcase' ></box-icon>
+                    </Link>
+                </div>
+                <div className="nav-item">
+                    <Link
+                        activeClass="is-active"
+                        to="about"
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={500}
+                    >
+                        <box-icon name='info-circle' ></box-icon>
+                    </Link>
                 </div>
             </nav>
         </div>

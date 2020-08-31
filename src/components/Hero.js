@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
     return (
-        <div className="hero overlay overlay--black">
+        <div id="top" className="hero overlay overlay--black">
             <div className="container">
                 <div className="row">
                     <div className="col">
