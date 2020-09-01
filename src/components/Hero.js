@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import AOS from 'aos';
 import background from '../images/hero.jpg';
 

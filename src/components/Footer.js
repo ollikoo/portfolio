@@ -15,7 +15,7 @@ const Footer = () => {
                         <div onClick={scrollTop} className="footer__logo"></div>
                     </div>
                     <div className="center col-sm-12 col-lg-8">
-                        <p>Drop me a line at <a href="mailto:olli.i.karkkainen@gmail.com">olli.i.karkkainen(at)gmail.com</a> or call <a href="tel:+358407252921">+358 40 7252921</a></p>
+                        <p>Drop me a line at <a href="mailto:olli.i.karkkainen@gmail.com">olli.i.karkkainen(at)gmail.com</a> or call <a href="tel:+358407252921">+358407252921</a></p>
                     </div>
                     <div className="right col-sm-12 col-lg-2">
                         <div className="footer__links">
