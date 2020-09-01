@@ -43,6 +43,29 @@ p.italic {
   font-style: italic;
 }
 
+.button {
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+  text-align: center;
+  background-color: var(--blood-red);
+  padding: 15px 30px;
+  opacity: 1;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.button:hover {
+  cursor: pointer;
+  text-decoration: none;
+  transform: translateY(-5px);
+  box-shadow: var(--global-shadow);
+}
+
 .section h2 {
   margin-bottom: 50px;
 } 
@@ -187,6 +210,12 @@ nav.is-active {
   overflow: hidden;
 }
 
+.hero .col {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
 .hero__bg {
   opacity: 0;
   position: absolute;
@@ -197,7 +226,25 @@ nav.is-active {
   color: var(--white);
   position: relative;
   z-index: 1;
-  font-size: 65px;
+  font-size: 55px;
+  margin-bottom: 50px;
+}
+
+.hero__profile {
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: 150px;
+  border: 2px solid var(--grey);
+  border-radius: 100%;
+  background-image: url('images/profile.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-color: var(--dark-grey);
+  position: relative;
+  z-index: 2;
+  margin-bottom: 30px;
 }
 
 .hero__link, .footer__link {
@@ -395,6 +442,16 @@ nav.is-active {
 }
 
 @media (max-width: 992px) {
+
+  .hero__profile {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
   .section--about .half-n-half {
     position: relative;
   }
@@ -479,7 +536,7 @@ nav.is-active {
 }
 
 .carousel-indicators {
-  bottom: -70px;
+  bottom: -40px;
 }
 
 .carousel-indicators li {
@@ -644,10 +701,6 @@ footer .right {
 }
 
 @media (max-width: 576px) {
-  .hero h1 {
-    font-size: 40px;
-  }
-
   .carousel-item__name, .carousel-item__year, .carousel-item__role {
     font-size: 20px;
   }

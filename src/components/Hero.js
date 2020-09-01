@@ -1,6 +1,7 @@
 import React from 'react';
 import AOS from 'aos';
 import background from '../images/hero.jpg';
+import { Link } from "react-scroll";
 
 const Hero = () => {
 
@@ -13,8 +14,20 @@ const Hero = () => {
             <img onLoad={initHero} aria-hidden="true" className="hero__bg" src={background} alt="Hero background"/>
             <div className="container">
                 <div className="row">
-                    <div className="col">
-                        <h1 data-aos="fade-up" data-aos-duration="2000">Hello, I am Olli and I am<br/> 25-year-old Web Developer and Designer</h1>
+                    <div className="col" data-aos="fade-up" data-aos-duration="2000">
+                        <div className="hero__profile"></div>
+                        <h1>Hello! I am Olli and I am<br/> Web Developer and Designer</h1>
+                        <Link
+                            className="button"
+                            activeClass="is-active"
+                            to="samples"
+                            spy={true}
+                            smooth={true}
+                            offset={0}
+                            duration={500}
+                        >
+                            Check my work
+                        </Link>
                     </div>
                 </div>
             </div>
