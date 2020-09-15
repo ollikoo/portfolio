@@ -20,7 +20,7 @@ const App = () => {
         <Hero />
         <Samples
           id="samples"
-          title="Work"
+          title="Projects"
           number="01"
         />
         <About

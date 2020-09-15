@@ -193,12 +193,6 @@ nav.is-active {
 }
 
 .hero {
-  background-color: var(--dark-grey);
-  background-image: url('images/hero.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -227,7 +221,7 @@ nav.is-active {
   position: relative;
   z-index: 1;
   font-size: 55px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .hero__profile {
@@ -245,6 +239,59 @@ nav.is-active {
   position: relative;
   z-index: 2;
   margin-bottom: 30px;
+  box-shadow: var(--global-shadow);
+}
+
+.hero__parallax {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.hero__parallax-mid {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 100px;
+  left: 0;
+}
+
+.hero__parallax-front {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: -100px;
+  left: 0;
+}
+
+@media (max-width: 992px) {
+  .hero__parallax-mid {
+    bottom: 250px;
+  }
+  
+  .hero__parallax-front {
+    bottom: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__parallax-mid {
+    bottom: 280px;
+  }
+  
+  .hero__parallax-front {
+    bottom: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero__parallax-mid {
+    bottom: 320px;
+  }
+  
+  .hero__parallax-front {
+    bottom: 120px;
+  }
 }
 
 .hero__link, .footer__link {
@@ -266,14 +313,15 @@ nav.is-active {
 }
 
 .hero__link box-icon, .footer__link box-icon {
-  fill: var(--grey);
+  fill: var(--white);
+  opacity: 0.4;
   width: 36px;
   height: 36px;
   transition: all 0.35s ease;
 }
 
 .hero__link:hover box-icon {
-  fill: var(--white);
+  opacity: 1;
 }
 
 .hero__quote {
@@ -306,7 +354,11 @@ nav.is-active {
   padding-top: var(--section-padding-top);
   padding-bottom: var(--section-padding-bottom);
   position: relative;
-  z-index: 2;
+  z-index: 3;
+}
+
+.react-parallax {
+  z-index: 1;
 }
 
 .section h2 {
@@ -331,13 +383,124 @@ nav.is-active {
 
 }
 
+.about__parallax {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.about__parallax-mid {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 140px;
+  left: 0;
+}
+
+.about__parallax-front {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 20px;
+  left: 0;
+}
+
+@media (max-width: 1200px) {
+  .about__parallax-mid {
+    bottom: 285px;
+  }
+  
+  .about__parallax-front {
+    bottom: 140px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about__parallax-mid {
+    bottom: 270px;
+  }
+  
+  .about__parallax-front {
+    bottom: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__parallax-mid {
+    bottom: 260px;
+  }
+  
+  .about__parallax-front {
+    bottom: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about__parallax-mid {
+    bottom: 270px;
+  }
+  
+  .about__parallax-front {
+    bottom: 120px;
+  }
+}
+
+.timeline__parallax {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.timeline__parallax-front {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 20px;
+  left: 0;
+}
+
+@media (max-width: 1200px) {
+
+  .timeline__parallax-front {
+    bottom: 170px;
+    width: 150%;
+    left: -25%;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .timeline__parallax-front {
+    bottom: 250px;
+    width: 160%;
+    left: -30%;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .timeline__parallax-front {
+    bottom: 300px;
+    width: 170%;
+    left: -35%;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .timeline__parallax-front {
+    bottom: 330px;
+    width: 190%;
+    left: -45%;
+  }
+}
+
 .section--samples {
   background-color: var(--dark-grey);
   padding-bottom: 140px;
 }
 
 .section--about {
-  background-color: var(--blood-red);
   padding: 0;
 }
 
@@ -348,12 +511,6 @@ nav.is-active {
   width: 100%;
   height: 100%;
   display: flex;
-  background-image: url('images/about-2.jpg');
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-color: var(--dark-grey);
-  background-attachment: fixed;
 }
 
 .section--about .half-n-half .left {
@@ -369,7 +526,7 @@ nav.is-active {
 .section--about .half-n-half .right:after {
   content: '';
   background-color: var(--blood-red);
-  opacity: 0.9;
+  opacity: 0.8;
   position: absolute;
   top: 0;
   left: 0;
@@ -377,18 +534,14 @@ nav.is-active {
   height: 100%;
 }
 
-.section--history {
-  background-image: url('images/history.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-color: var(--dark-grey);
-}
-
-.section--history row {
+.section--history .row {
   position: relative;
   z-index: 2;
+}
+
+.section--history .col {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .history-timeline {
@@ -460,10 +613,17 @@ nav.is-active {
     width: 100%;
   }
 
-  .section--about .half-n-half .left::after {
+  .section--about::before {
     content: '';
-    display: block;
+    position: absolute;
+    background-color: var(--blood-red);
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
     padding-bottom: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
   }
 
   .section--about .half-n-half .right {
@@ -474,6 +634,8 @@ nav.is-active {
 .section--about .grid .right {
   padding-top: var(--section-padding-top);
   padding-bottom: var(--section-padding-bottom);
+  position: relative;
+  z-index: 3;
 }
 
 @media (min-width: 992px) {
@@ -634,9 +796,9 @@ nav.is-active {
 
 footer {
   background-color: var(--blood-red);
-  padding-top: 50px;
-  padding-bottom: 50px;
   position: relative;
+  padding-top: 264px;
+  z-index: 0;
 }
 
 footer p, footer a {
@@ -644,21 +806,35 @@ footer p, footer a {
   margin: 0;
 }
 
+.footer-fixed-wrap {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+
 .footer__links {
   width: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
 }
 
 .footer__link {
   position: relative;
   bottom: unset;
   right: unset;
+  z-index: 1;
 }
 
 .footer__link box-icon {
-  fill: white;
+  fill: var(--white);
+  position: relative;
+  opacity: 1;
 }
 
 footer .left {
@@ -685,6 +861,11 @@ footer .right {
 }
 
 @media (min-width: 992px) {
+
+  footer {
+    padding-top: 142px;
+  }
+
   footer .left {
     justify-content: left;
     margin-bottom: 0;
