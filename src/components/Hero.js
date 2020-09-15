@@ -19,12 +19,11 @@ const Hero = () => {
             renderLayer={percentage => (
                 <div className="hero__parallax">
                     <img className="hero__parallax-mid" style={{transform: `translate(0, ${percentage * 700}px)`}} src={parallaxMid} alt="" />
-                    <img className="hero__parallax-front"  style={{transform: `translate(0, ${percentage * 300}px)`}} src={parallaxFront} alt="" />
+                    <img onLoad={initHero} className="hero__parallax-front"  style={{transform: `translate(0, ${percentage * 300}px)`}} src={parallaxFront} alt="" />
                 </div>
             )}
         >
             <div id="top" className="hero overlay overlay--black">
-                <img onLoad={initHero} aria-hidden="true" className="hero__bg" src={background} alt="Hero background"/>
                 <div className="container">
                     <div className="row">
                         <div className="col" data-aos="fade-up" data-aos-duration="2000">
