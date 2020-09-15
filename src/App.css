@@ -437,11 +437,21 @@ nav.is-active {
 
 @media (max-width: 576px) {
   .about__parallax-mid {
-    bottom: 270px;
+    bottom: 300px;
   }
   
   .about__parallax-front {
-    bottom: 120px;
+    bottom: 130px;
+  }
+}
+
+@media (max-width: 420px) {
+  .about__parallax-mid {
+    bottom: 380px;
+  }
+  
+  .about__parallax-front {
+    bottom: 170px;
   }
 }
 
@@ -489,7 +499,7 @@ nav.is-active {
 @media (max-width: 576px) {
 
   .timeline__parallax-front {
-    bottom: 330px;
+    bottom: 400px;
     width: 190%;
     left: -45%;
   }
@@ -893,6 +903,17 @@ footer .right {
   }
 }
 
-
-
 @media (min-width: 1200px) { }
+
+
+@media (max-width: 532px) {
+  footer {
+    padding-top: 288px;
+  }
+}
+
+@media (max-width: 363px) {
+  footer {
+    padding-top: 312px;
+  }
+}
